@@ -1,0 +1,238 @@
+body{
+    /* background-color: #9999ff !important; */
+    background-image: url('images/bg.jpg');
+    font-family: 'Indie Flower', cursive;
+    font-weight: 600;
+    font-size:25px;
+    color:white;
+}
+h1{
+    text-align: center;
+    font-size: 70px !important;
+    color:white !important;
+    text-decoration: underline;
+    font-family: 'Indie Flower', cursive !important;
+}
+h5{
+font-weight: 500 !important;
+font-size: 20px !important;
+}
+nav{
+    display: flex !important;
+    justify-content: space-around;
+    align-items:center !important;
+    min-height:8vh;
+    background-color: white;
+    color:black;
+}
+.nav-links{
+    display: flex !important;
+    justify-content: space-around;
+    width: 50%;
+}
+.nav-links a{
+    color:black;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: bold !;
+}
+.nav-links a:hover{
+    text-decoration: none;
+    color:#007bff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.nav-links li{
+    list-style: none;
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.burger div{
+    width:20px;
+    height:5px;
+    background-color: black;
+    margin:3px;
+
+}
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+        color: black !important;
+    }
+    li a{
+        color: black !important;
+    }
+    .nav-links{
+        position:absolute;
+        right:0px;
+        height:94vh;
+        top:8vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:50%;
+        color:black !important;
+        transform:translateX(100%); 
+        transition:transform 0.5s ease-in; 
+    }
+    .nav-links li a{
+        color:black;
+    }
+    .banner-logo{
+        position: absolute;
+        top:15%;
+        color:white;
+        left:12% !important;
+    }
+    .banner-text{
+    position: absolute;
+    top:50%;
+    color:white;
+    left:24% !important;
+    font-family:"Helvetica Neue";
+    font-size:20px;
+    width:200px;
+    padding:15px;
+    border-radius: 10px;
+    }
+    .nav-links li{
+        opacity:0;
+        color: black;
+    }
+    .nav-links a{
+        color: black;
+    }
+    .burger{
+        display:block;
+        color: black !important;
+    }
+}
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.nav-active{
+    transform: translateX(0%);
+    color: black !important;
+}
+
+/* form {
+    margin: 20px auto;
+    width:520px;
+    color:steelblue;
+} */
+input {
+    padding:10px;
+    font-size: inherit;
+}
+input[type="text"] {
+    display: block;
+    margin-bottom: 25px;
+    width:100%;
+    border: 2px dotted black;
+    background:#ffffe6;
+}
+input[type="email"] {
+    display: block;
+    margin-bottom: 25px;
+    width:100%;
+    border: 2px dotted black;
+    background:#ffffe6;
+}
+input[type="date"] {
+    display: block;
+    margin-bottom: 25px;
+    width:100%;
+    border: 2px dotted black;
+    background:#ffffe6;
+}
+input[type="radio"] {
+    margin:0px 8px 25px 25px;
+    background:#ffffe6;
+}
+h1{
+    color: white;
+}
+input[type="radio"]:first-child {
+    margin-left:0px;
+}
+textarea {
+    padding:10px;
+    font-size: inherit;
+}
+textarea[type="text"] {
+    display: block;
+    margin-bottom: 25px;
+    width:100%;
+    border: 2px dotted black;
+    background:#ffffe6;
+}
+.event-select{
+    color:white;
+    letter-spacing:0.2em;
+    /* text-align: center; */
+}
+li{
+    list-style: none;
+}
+input[type="submit"]{
+    width:100px;
+    height:45px;
+    border: none;
+    background: steelblue;
+    color:white;
+}
+input[type="submit"]:focus{
+    width:100px;
+    height:45px;
+    border: none;
+    background: white;
+    color:steelblue;
+}
+input:focus {
+    background: white;
+}
+input[type="radio"]:checked + label {
+    font-weight: bold;
+    font-size: 25px;
+}
+.row{
+    padding:10px;
+
+}
+.social{
+    background-color:#09118D;
+    color:white;
+    border: none;
+}
+.social:hover{
+    box-shadow:0 0 20px cyan;
+    color:cyan;
+    border-radius:50%;
+    background-color:#09118D !important;
+}
+footer-logo{
+    width:150px;
+}
+footer{
+    background-color:#09118D !important;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif !important;
+    height:10vh;
+    width: 100% !important;
+    text-align: center;
+    padding-top: 25px;
+    margin: 0px !important;
+}

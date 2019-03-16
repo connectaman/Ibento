@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact us</title>
+    <link rel="stylesheet" href="libs/css/contact.css">
+    <link rel="shortcut icon" href="images/logo/logo_ibento.png">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/data/contact.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript">(function(t,e){var r=function(t){try{var r=e.head||e.getElementsByTagName("head")[0];a=e.createElement("script");a.setAttribute("type","text/javascript");a.setAttribute("src",t);r.appendChild(a);}catch(t){}};t.CollectId = "5c4a85cf4215735d4f310341";r("https://collectcdn.com/launcher.js");})(window,document);</script> -->
+  </head>
+<body ng-app="myApp">
+    <div id="loader"></div>
+    <style>
+        #loader {
+             position: fixed;
+             width: 100%;
+             height: 100vh;
+             z-index: 1;
+             overflow: visible;
+            background: url('loader.gif') no-repeat center center;
+}
+    </style>
+    <script type="text/javascript">
+        
+        var loader;
+        function loadNow(opacity) {
+            if(opacity <= 0) {
+                displayContent();
+            }
+            else {
+                loader.style.opacity = opacity;
+                window.setTimeout(function() {
+                    loadNow(opacity - 0.05)
+                }, 10);
+            }
+        }
+        
+        function displayContent() {
+            loader.style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            loader = document.getElementById('loader');
+            loadNow(1);
+        });
+        
+    </script>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html">Ibento</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="about.html">About Us <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="services_new.html">Services <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="gallery.html">Gallery <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="contact.html">Contact Us <span class="sr-only">(current)</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <h1 align="center" style="font-family: 'Roboto Mono', monospace;color: white;">Contact us </h1>
+              <div class="container">
+        <div class="row ">
+            <!-- <div class="column"> -->
+    <!-- <div class ="container"> -->
+    <div class="col-lg-6" ng-controller="contact">
+              
+      <form name="contact">
+        <div class="form-group center-block">
+          <label for="inputName">Name</label>
+          <input type="text" class="form-control contact-input" id="inputName" ng-model="name" placeholder="Name" name="name" required>
+        </div>
+        <div class="form-group center-block">
+          <label for="inputEmail">Email</label>
+          <input type="email" class="form-control contact-input" id="inputEmail" ng-model="email" placeholder="Email" name="email" required>
+        </div>
+        <div class="form-group center-block">
+          <label for="inputMessage">Message</label>
+          <textarea id="inputMessage" class="form-control contact-input" rows="6" placeholder="Your Message" ng-model="msg" name="message" required></textarea>
+        </div>
+        <div class="text-center">
+          <center><button class="btn-lg" onclick="validate();" ng-click="submit()">Submit</button></center>
+        </div>
+        <span></span>
+      </form>
+</div>
+<!-- </div> -->
+<!-- <div class="column"></div> -->
+<div class="col-lg-6 address">
+  <div class="row">
+    <div class="col-md-4 fa"><i class="fa fa-globe"></i></div>
+    <div class="col-md-8"><p> www.ibento.com</p></div>
+  </div>
+  <div class="row">
+      <div class="col-md-4 fa"><i class="fa fa-address-book"></i></i></div>
+      <div class="col-md-8"><p>Vijaynagar, Bangalore</p></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 fa"><i class="fa fa-envelope"></i> </div>
+        <div class="col-md-4"> <p>info@ibento.com</p></div>
+      </div>
+      <div class="row">
+          <div class="col-md-4 fa"><i class="fa fa-phone"></i> </div>
+          <div class="col-md-4"><p>+91-387583576</p></div>
+        </div>
+
+
+                    </div>
+
+    
+</div>
+</div>
+<div class="clearfix" style="margin:30px;"></div>
+    <!-- <h1 align="center" style="font-family: 'Roboto Mono', monospace; color:white;">Company location</h1> -->
+    <div class="clearfix"></div>
+    <div class="container">
+<div class="maps">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0513020287203!2d77.53479871475555!3d12.968569090857828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3dde41c9d541%3A0xdd5400ac1d9e0a9a!2sNIIT+Bangalore+Vijayanagar+Centre!5e0!3m2!1sen!2sin!4v1548305747370" width="100%" height="450" frameborder="10px" style="border:0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="clearfix" style="margin:30px;"></div>
+<footer class="foot">
+        <div class="row">
+          <div class="col-lg-4">
+            <h3>Ibento</h3>
+            <img style="width:200px;" src="images/logo/logo_ibento.png" alt="logo">
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <div class="row" style="margin-top:50px;">
+                <div class="col-sm-6">
+                    <a href="signup.html"><p>SignUp</p></a>
+                    <a href="index.html"><p>Home</p></a>
+                    <a href="about.html"><p>About Us</p></a>
+                </div>
+                <div class="col-sm-6">
+                    <a href="Services.html" target="_blank"><p>Services</p></a>
+                    <a href="gallery.html"><p>Gallery</p></a>
+                    <a href="contact.html"><p>Contact Us</p></a>
+                </div>
+
+            </div>
+            
+          </div>
+          <div class="col-lg-4">
+            <p>+91-8374983748</p>
+            <p>info@ibento.com</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.05130202872!2d77.53479871489891!3d12.968569090857867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3dde41c9d541%3A0xdd5400ac1d9e0a9a!2sNIIT+Bangalore+Vijayanagar+Centre!5e0!3m2!1sen!2sin!4v1548324442885" width="300" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="copy">
+          <p>&copy; Copyright 2019 <a href="index.html">Ibento</a></p>
+        </div>
+      </footer>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<footer class="page-footer font-small indigo">
+    <div class="container text-center text-md-left">
+      <div class="row">
+        <div class="col-md-3 mx-auto">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Ibento</h5>
+          <img src="images/logo/logo_ibento.png" class="footer-logo" alt="logo">
+        </div>
+        <hr class="clearfix w-100 d-md-none">
+        <div class="col-md-3 mx-auto">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Office</h5>
+         <p>Bangalore</p>
+         <p>Noida</p>
+         <p>Chennai</p>
+        </div>
+        <hr class="clearfix w-100 d-md-none">
+        <div class="col-md-3 mx-auto">
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Contact</h5>
+          <p>+91-34834834837</p>
+          <p>info@ibento.com</p>
+        </div>
+        <hr class="clearfix w-100 d-md-none">
+        <div class="col-md-3 mx-auto">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Social</h5>
+          <button class="social"><span><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></span></button>
+          <button class="social"><span><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></span></button>
+          <button class="social"><span><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></span></button>
+          <button class="social"><span><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></span></button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="#">Ibento</a>
+    </div>
+  </footer>

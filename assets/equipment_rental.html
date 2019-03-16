@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Rent Equipment</title>
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link rel="shortcut icon" href="/images/logo/logo_ibento.png">
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="equipment_rental.css">
+		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/data.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+		<script src="dashboard.js"></script>
+		<script src="data/equipment.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+					<span><img style="width:30px;" src="../images/logo/logo_ibento.png">Ibento</span>
+			</div>
+			<a href="#" class="nav-trigger"><span></span></a>
+		</div>
+		<div class="side-nav">
+			<div class="logo">
+					<span><img style="width:30px;" src="../images/logo/logo_ibento.png">Ibento</span>
+			</div>
+			<nav>
+				<ul>
+					<li>
+						<a href="dasboard.html">
+							<span><i class="fa fa-user"></i></span>
+							<span>Dashboard</span>
+						</a>
+					</li>
+					<li>
+							<a href="getevent.html">
+	
+								<span><i class="fa fa-cubes"></i></span>
+								<span>View Events</span>
+							</a>
+						</li>
+						<li>
+								<a href="hostevent.html">
+		
+									<span><i class="fa fa-cubes"></i></span>
+									<span>Host Events</span>
+								</a>
+							</li>
+						<li>
+								<a href="review.html">
+		
+									<span><i class="fa fa-credit-card"></i></span>
+									<span> Upload Review</span>
+								</a>
+							</li>
+							<li>
+									<a href="getreview.html"> 
+			
+										<span><i class="fa fa-credit-card"></i></span>
+										<span>Reviews</span>
+									</a>
+								</li>
+					<li class="active">
+						<a href="equipment_rental.html">
+							<span><i class="fa fa-cart-plus"></i></span>
+							<span>Equipment Rental</span>
+						</a>
+					</li>
+					<li>
+						<a href="venue.html">
+							<span><i class="fa fa-bar-chart"></i></span>
+							<span>Venue Rental</span>
+						</a>
+					</li>
+					<li>
+							<a href="profile.html">
+								<span><i class="fa fa-user"></i></span>
+								<span>Profile</span>
+							</a>
+						</li>
+					<li>
+							<a href="../index.html">
+								<span><i class="fa fa-minus-circle"></i></span>
+								<span>Log Out</span>
+							</a>
+						</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="main-content">
+			<div class="title">
+				Rent Equipment
+			</div>
+			<div class="clearfix" style="height:20px;"></div>
+			<div class="main" ng-app="myApp" ng-controller="equipment">
+				<form novalidate name="rent">
+				<h1></h1>
+				<h1></h1>
+				<div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-5">
+						<div class="question">
+								<span ng-show="rent.Name.$error.required">Required *</span>
+								<input type="text" placeholder="Name"   ng-model="name" name="Name" id="name" required>
+						</div>
+						<div class="question">
+								<span ng-show="rent.Email.$error.required">Required *</span>
+								<span ng-show="rent.Email.$error.Email">Not a Email</span>
+								<input type="text" placeholder="Email Id"  ng-model="email" name="Email" id="email" required>
+						</div>
+						<div class="question">
+								<span ng-show="rent.phone.$error.required">Required *</span>
+								<input type="text" placeholder="Phone Number"  ng-model="phone" name="phone" id="phone" required>
+						</div>
+						<div class="question">
+								<span ng-show="rent.address.$error.required">Required *</span>
+								<textarea type="text" placeholder="Address"  ng-model="address" name="address" rows="5" cols="45" id="address" required></textarea>
+						</div>
+						<div class="question">
+								<span ng-show="rent.city.$error.required">Required *</span>
+								<input type="text" placeholder="City"  ng-model="city" name="city" id="city" required>
+						</div>
+						<div class="question">
+								<span ng-show="rent.pin.$error.required">Required *</span>
+								<input type="text" placeholder="Pin Code"  ng-model="pin" name="pin" id="pin" required>
+						</div>
+
+                </div>
+                <div class="col-lg-5">
+						<div class="question">
+								<textarea type="text" placeholder="Mention the Items you want"  ng-model="items" name="desc" rows="5" cols="45"></textarea>
+						</div>
+						<div class="question">
+								<span ng-show="rent.StartDate.$error.required">Required *</span>
+								<label for="StartDate" style="color:black;">Start Date</label>
+                                <input type="date" placeholder="Event Start Date" id="StartDate"  ng-model="startdate" name="StartDate" id="startdate" required>
+						</div>
+						<div class="question">
+								<span ng-show="rent.EndDate.$error.required">Required *</span>
+								<label for="EndDate" style="color:black;">End Date</label>
+                                <input type="date" placeholder="Event End Date" id="EndDate" ng-model="enddate" name="EndDate" id="enddate" required>
+						</div>
+						<div class="question">
+								<textarea type="text" placeholder="Enter Comment" ng-model="review" name="desc" rows="5" cols="45"></textarea>
+						</div>						
+        						<center><button ng-disabled="review.$invalid" onclick="validate();" class="btn-lg" ng-click="submit()">Submit</button></center>
+							  </div>
+							  
+				</div>
+			</form>
+            </div>
+			</div>
+		<footer>
+				<div class="copy">
+						<p>&copy; Copyright 2019 <a href="index.html">Ibento</a></p>
+					  </div>
+		</footer>
+	</body>
+	<style>
+			input.ng-invalid{
+			border:1px solid red !important;
+			}
+			textarea.ng-invalid{
+				border:1px solid red !important;
+			}
+			form span{
+			font-size:12px !important; 
+			padding-left: 20px;
+			color:black;
+			}
+			</style>
+			<script type="text/javascript">
+				function validate()
+				{
+					console.log("inside");
+					var name = document.getElementById('name').value;
+				     var email = document.getElementById('email').value;
+					 var phone = document.getElementById('phone').value;
+					var city = document.getElementById('city').value;
+					var pin = document.getElementById('pin').value;
+					var startdate = document.getElementById('startdate').value;
+					var enddate = document.getElementById('enddate').value;
+					if(email != null)
+					{
+						swal("Submitted!", "You Sucessfully Submitted!","success");
+					}
+				}
+			
+			
+			</script>
+</html>

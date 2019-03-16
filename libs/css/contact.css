@@ -1,0 +1,73 @@
+body{
+  font-family: 'Roboto Mono', monospace;
+  background: url('/images/bg.jpg') no-repeat;
+  color:white;
+}
+label{
+  color: white;
+}
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  input[type=send] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  cursor: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  /* width:535px; */
+  text-align: center;
+}
+input[type=send]:hover {
+  background-color: #45a049;
+}
+.map{
+  margin:10px;
+}
+.display-none {
+  display: none;
+}
+.address{
+  padding-top:150px;
+  text-align: left;
+  font-size: 20px;
+  font-family: 'Roboto Mono', monospace;
+  color:white;
+}
+.fa{
+  text-align: right !important;
+}
+@media screen and (max-width:80px){
+  .address{
+    color:white;
+  }
+}
+footer{
+  background-color:#09118D;
+  color:white;
+  text-align: center;
+  padding:5px;
+}
+footer a{
+  color:yellow;
+}
+footer a:hover{
+color: white;
+}
+.copy{
+padding:10px;
+background-color: rgb(41, 36, 129);
+}
+.clearfix{
+  clear:both;
+  height:3%;
+}

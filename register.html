@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="images/logo/logo_ibento.png">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="assets/data/register.js"></script>
+    <link rel="stylesheet" href="libs/css/register.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+</head>
+<body ng-app="myApp">
+        <div id="loader"></div>
+        <style>
+            #loader {
+                 position: fixed;
+                 width: 100%;
+                 height: 100vh;
+                 z-index: 1;
+                 overflow: visible;
+                background: url('loader.gif') no-repeat center center;
+    }
+        </style>
+        <script type="text/javascript">
+            
+            var loader;
+            function loadNow(opacity) {
+                if(opacity <= 0) {
+                    displayContent();
+                }
+                else {
+                    loader.style.opacity = opacity;
+                    window.setTimeout(function() {
+                        loadNow(opacity - 0.05)
+                    }, 10);
+                }
+            }
+            
+            function displayContent() {
+                loader.style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }
+            
+            document.addEventListener("DOMContentLoaded", function() {
+                loader = document.getElementById('loader');
+                loadNow(1);
+            });
+            
+        </script>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Ibento</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="about.html">About Us <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="services_new.html">Services <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="gallery.html">Gallery <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us <span class="sr-only"></span></a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    <div class="container" ng-controller="Register">
+        <form  name="signup">
+                <h1>Register</h1>
+                <div class="question">
+                        <span ng-show="signup.name.$error.required">Required</span>
+                        <input type="text" name="name" ng-model="name" id="name" class="form-control input-sm"  required>
+                        
+                        <label>Name</label>
+                        <span style="color:red;" ng-show="signup.name.$error.name">Not a Name</span>
+                </div>
+                <div class="question">
+                        <span ng-show="signup.dob.$error.required">Required</span>
+                        <input style="color:red;" type="text" name="dob" ng-model="dob" id="dob" class="form-control input-sm"required>
+                  <label>Date Of Birth [dd-mm-yyyy]</label>
+                </div>
+                <div class="question">
+                    <span ng-show="signup.email.$error.required">Required</span>
+                    <input type="email"  name="email" ng-model="email" id="email" class="form-control input-sm"  pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" required>
+                    <label>Email</label>
+                    <span  style="color:red;"ng-show="signup.email.$error.email">Not a Email</span>
+                 </div>
+                <div class="question">
+                        <span ng-show="signup.password.$error.required">Required  (min-6,max-10) </span>
+                        <input type="password"  name="password" ng-model="password" id="password" class="form-control input-sm" ng-minlength="6" ng-maxlength="10" required>
+                  <label>Password</label>
+                  <span style="color:red;" ng-show="signup.password.$error.minlength">too short!</span>
+                  <span style="color:red;" ng-show="signup.password.$error.maxlength">too long!</span>
+                </div>
+                <div class="question">
+                        <span ng-show="signup.confirmpassword.$error.required">Required  (min-6,max-10)</span>
+                        <input type="password"  name="confirmpassword" ng-model="confirmpassword" id="confirmpassword" class="form-control input-sm" ng-minlength="6" ng-maxlength="10" required>
+                  <label>Confirm Password</label>
+                  <span  style="color:red;" ng-show="signup.confirmpassword.$error.minlength">too short!</span>
+                  <span style="color:red;" ng-show="signup.confirmpassword.$error.maxlength">too long!</span>
+                </div>
+                <div class="question">
+                        <span  ng-show="signup.gender.$error.required">Required</span>
+                        <input type="text"  name="gender" ng-model="gender" id="gender" class="form-control input-sm" required>
+                        <label>Gender</label>
+                </div>
+                 <div class="question">
+                        <span ng-show="signup.phone.$error.required">Required</span>
+                        <input type="number" name="phone" ng-model="phone"  id="phone" class="form-control input-sm" required>
+                        <label>Phone Number</label>
+                </div>
+                <div class="question">
+                        <span ng-show="signup.city.$error.required">Required</span>
+                        <input type="text" name="city" ng-model="city" id="city" class="form-control input-sm" required>
+                        <label>City</label>
+                </div>
+                <div class="question">
+                        <span ng-show="signup.State.$error.required">Required</span>
+                        <input type="text" name="State" ng-model="state" id="State" class="form-control input-sm" required>
+                        <label>State</label>
+                </div>
+                <center><button ng-disabled="signup.$invalid" onclick="validate();" class="btn-block" ng-click="submit()">Submit</button></center>
+              </form>
+            </div>
+            <footer class="foot">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <h3>Ibento</h3>
+                    <img style="width:200px;" src="images/logo/logo_ibento.png" alt="logo">
+                    <p></p>
+                  </div>
+                  <div class="col-lg-4">
+                        <div class="row" style="margin-top:50px;">
+                                <div class="col-sm-6">
+                                    <a href="signup.html"><p>SignUp</p></a>
+                                    <a href="index.html"><p>Home</p></a>
+                                    <a href="about.html"><p>About Us</p></a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a href="Services.html" target="_blank"><p>Services</p></a>
+                                    <a href="gallery.html"><p>Gallery</p></a>
+                                    <a href="contact.html"><p>Contact Us</p></a>
+                                </div>
+                            </div>    
+                  </div>
+                  <div class="col-lg-4">
+                    <p>+91-8374983748</p>
+                    <p>info@ibento.com</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.05130202872!2d77.53479871489891!3d12.968569090857867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3dde41c9d541%3A0xdd5400ac1d9e0a9a!2sNIIT+Bangalore+Vijayanagar+Centre!5e0!3m2!1sen!2sin!4v1548324442885" width="300" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="copy">
+                  <p>&copy; Copyright 2019 <a href="index.html">Ibento</a></p>
+                </div>
+              </footer>
+</body>
+<style>
+input.ng-invalid{
+    border:1px solid red !important;
+}
+span{
+    font-size:12px !important; 
+    padding-left: 20px;
+}
+</style>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="host.css">
+    <link rel="shortcut icon" href="images/logo/logo_ibento.png">
+    
+    <!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Host Event</title>
+</head>
+<body>
+    <h1>Host Events</h1>
+    <form>
+    <div class="row">
+      <div class="col-lg-6">
+        <input type="text" placeholder="Name" name="Name" required>
+        <input type="text" placeholder="Designation" name="Designation" required>
+        <input type="text" placeholder="Email Id" name="Email"required>
+        <input type="text" placeholder="Phone Number" name="phone"required>
+        <textarea type="text" placeholder="Address" name="address" rows="5" cols="45"required></textarea>
+        <input type="text" placeholder="City" name="city"required>
+        <input type="text" placeholder="Pin Code" name="pin"required>
+        <div class="event-select">
+            <ul>
+           <li><input type="radio" id="Corporate" name="EventType"><label for="Corporate">Corporate</label></li>
+           <li><input type="radio" id="Conference" name="EventType"><label for="Conference">Conference</label></li>
+            <li><input type="radio" id="Seminar" name="EventType"><label for="Seminar">Seminar</label></li>
+            <li><input type="radio" id="Exhibition" name="EventType"><label for="Exhibition">Exhibition</label></li>
+            <li><input type="radio" id="Wedding" name="EventType"><label for="Wedding">Wedding</label></li>
+            <li><input type="radio" id="ProductLaunch" name="EventType"><label for="ProductLaunch">Product Launch</label></li>
+            <li><input type="radio" id="Promotion" name="EventType"><label for="Promotion">Promotion</label></li>
+            <li><input type="radio" id="IncentiveTour" name="EventType"><label for="IncentiveTour">Incentive Tour</label>   </li>          
+            <li><input type="radio" id="Award" name="EventType"><label for="Award">Award</label></li>
+            <li><input type="radio" id="Entertainment" name="EventType"><label for="Entertainment">Entertainment</label></li>
+        </ul>
+      </div>
+      </div>
+      <div class="col-lg-6">
+        <input type="text" placeholder="Event Name" name="EventName"required>
+        <label for="StartDate" style="color:white;">Start Date</label>
+        <input type="date" placeholder="Event Start Date" id="StartDate" name="StartDate"required>
+        <label for="EndDate" style="color:white;">End Date</label>
+        <input type="date" placeholder="Event End Date" id="EndDate"name="EndDate"required>
+        <input type="text" placeholder="Estimated Number of Attendees" name="Attendees"required>
+        <input type="text" placeholder="Contract Signer" name="Contract"required>
+        <input type="text" placeholder="City" name="EventCity"required>
+        <textarea type="text" placeholder="Description" name="desc" rows="5" cols="45"></textarea>
+        <center><input type="submit" value="Submit"></center>
+      </div>
+
+
+    </div>
+  </form>
+       
+    <footer>
+        <p>© 2019 Copyright : <a href="index.html">Ibento</a></p>
+      </footer>
+</body>
+<script src="app.js"></script>
+</html>

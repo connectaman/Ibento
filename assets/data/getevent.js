@@ -1,0 +1,44 @@
+let app = angular.module("myApp", []);
+app.controller("eventcontroller",function($scope,$http){
+    $http.get("http://localhost:3000/hostevent").then(function(response){
+        $scope.data=response.data;
+    });  
+});
+app.controller("searchbox",function($scope,$http){
+    $scope.search=function(){
+        console.log($scope.event);
+        let data = {
+            EventName:$scope.event
+        };  
+        $http.post("http://localhost:3000/searchevent",data).then(function(response){
+            $scope.val=response.data;
+            console.log($scope.val);
+        });
+    }
+});
+app.controller("search",function($scope,$http){
+    $http.get("http://localhost:3000/searchdata").then(function(response){
+        $scope.val=response.data;
+        console.log($scope.val);
+    });  
+});
+app.controller("corporate",function($scope,$http){
+    $http.get("http://localhost:3000/corporate").then(function(response){
+        $scope.cor=response.data;
+    });  
+});
+app.controller("conference",function($scope,$http){
+    $http.get("http://localhost:3000/conference").then(function(response){
+        $scope.con=response.data;
+    });  
+});
+app.controller("seminar",function($scope,$http){
+    $http.get("http://localhost:3000/seminar").then(function(response){
+        $scope.con=response.data;
+    });  
+});
+app.controller("exhibition",function($scope,$http){
+    $http.get("http://localhost:3000/exhibition").then(function(response){
+        $scope.con=response.data;
+    });  
+});

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/logo/logo_ibento.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script type="text/javascript">(function(t,e){var r=function(t){try{var r=e.head||e.getElementsByTagName("head")[0];a=e.createElement("script");a.setAttribute("type","text/javascript");a.setAttribute("src",t);r.appendChild(a);}catch(t){}};t.CollectId = "5c4a85cf4215735d4f310341";r("https://collectcdn.com/launcher.js");})(window,document);</script>
+    <title>Ibento</title>
+</head>
+<body>
+    <div id="loader"></div>
+    <style>
+        #loader {
+             position: fixed;
+             width: 100%;
+             height: 100vh;
+             z-index: 1;
+             overflow: visible;
+            background: url('loader.gif') no-repeat center center;
+}
+    </style>
+    <script type="text/javascript">
+        
+        var loader;
+        function loadNow(opacity) {
+            if(opacity <= 0) {
+                displayContent();
+            }
+            else {
+                loader.style.opacity = opacity;
+                window.setTimeout(function() {
+                    loadNow(opacity - 0.05)
+                }, 10);
+            }
+        }
+        
+        function displayContent() {
+            loader.style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            loader = document.getElementById('loader');
+            loadNow(1);
+        });
+        
+    </script>
+    <!-- Particle JS and Json -->
+    <div id="particles-js">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Ibento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">About Us <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="services_new.html">Services <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="gallery.html">Gallery <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us <span class="sr-only"></span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+        <div class="banner-logo">
+            <img src="images/logo/logo_ibento.png" alt="logo">
+        </div>
+        <div class="banner-text" style="background-color:black; ">
+        <!-- <h1>Ibento</h1> -->
+        <a href="login.html"><button" id="myBtn" class="btn btn-lg btn-block btn-primary">Login</button></a>
+        <br>
+        <a href="register.html"><button type="button" class="btn btn-lg btn-block btn-success">Sign Up</button></a>
+        </div>
+    </div>
+    <!-- Services -->
+    <div class="clearfix"></div>
+    <div class="services">
+            <hr>
+        <h2> Why Choose Us?</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-4 bod-bottom ">
+                <i class="fa fa-cogs  fav fa-5x"></i>
+                  <p>We Provide 24/7 Support</p>
+            </div>
+            <div class="col-md-4 bod-bottom bod-left">
+                    <i class="fa fa-cubes  fav fa-5x"></i>
+                    <p>We Provide Equipment Rental</p>
+                </div>
+                <div class="col-md-4 bod-bottom bod-left">
+                        <i class="fa fa-globe  fav fa-5x"></i>
+                        <p>We Provide All Events Organization</p>
+                </div>
+        </div>
+        <div class="row">
+                <div class="col-md-4">
+                        <i class="fa fa-handshake-o  fav fa-5x"></i>
+                        <p>We Have Experienced Mentors</p>
+                </div>
+                <div class="col-md-4 bod-left">
+                        <i class="fa fa-bank  fav fa-5x"></i>
+                        <p>We Provide Space Rental</p>
+                    </div>
+                    <div class="col-md-4 bod-left">
+                            <i class="fa fa-bullhorn  fav fa-5x"></i>
+                            <p>Host Any Events</p>
+                        </div>
+            </div>
+    </div>
+    <div class="clearfix"></div>
+    <hr>
+    <!-- Plans -->
+    <div class="ibento-details">
+        <center><h2>Plans</h2></center>
+        <hr>
+        <div class="row">
+            <div class="col-lg-6" style="text-align: center;">
+                <iframe width="600" height="400" src="https://www.youtube.com/embed/ESUATdcldxI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="col-lg-5 text" style="margin-right:10px;">
+                    <p class="details"><strong></strong>Expro Events & Exhibits is one of India's leading firms for events and exhibitions infrastructure set-up and services. With a history spanning over 9 decades of service to its clients, Expro is the market leader when it comes to complete event infrastructure solutions and services.Expro specializes in planning, designing, coordinating, fabricating, setting up and activating event spaces of any magnitude including providing all related event services to make the event venue fully and smoothly operational.With a history spanning over 9 decades of service to its clients, Expro is the market leader when it comes to complete event infrastructure solutions and services.Expro specializes in planning, designing, coordinating, fabricating, setting up and activating event spaces of any magnitude including providing all related event services to make the event venue fully and smoothly operational.
+                                <br>
+                </div>
+        <!-- Footer -->
+    </div>
+</div> 
+<div class="clearfix"></div>
+<hr>
+<footer class="foot">
+    <div class="row">
+      <div class="col-lg-4">
+        <h3>Ibento</h3>
+        <img style="width:200px;" src="images/logo/logo_ibento.png" alt="logo">
+        <p></p>
+      </div>
+      <div class="col-lg-4">
+            <div class="row" style="margin-top:50px;">
+                    <div class="col-sm-6">
+                        <a href="signup.html"><p>SignUp</p></a>
+                        <a href="index.html"><p>Home</p></a>
+                        <a href="about.html"><p>About Us</p></a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="services_new.html"><p>Services</p></a>
+                        <a href="gallery.html"><p>Gallery</p></a>
+                        <a href="contact.html"><p>Contact Us</p></a>
+                    </div>
+                </div>    
+      </div>
+      <div class="col-lg-4">
+        <p>+91-8374983748</p>
+        <p>info@ibento.com</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.05130202872!2d77.53479871489891!3d12.968569090857867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3dde41c9d541%3A0xdd5400ac1d9e0a9a!2sNIIT+Bangalore+Vijayanagar+Centre!5e0!3m2!1sen!2sin!4v1548324442885" width="300" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="copy">
+      <p>&copy; Copyright 2019 <a href="index.html">Ibento</a></p>
+    </div>
+  </footer>
+  <!-- Footer -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+     particlesJS.load('particles-js','particles.json',function(){
+            console.log('particles.json loaded');
+     });
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

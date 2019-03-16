@@ -1,0 +1,92 @@
+body, html{
+  height:100%;
+  margin:0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  /* font-weight:400;\ */
+  line-height:1.8em;
+  color:#666;
+}
+
+.pimg1, .pimg2, .pimg3{
+  position:relative;
+  opacity:0.70;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+
+.pimg1{
+  background-image:url('/images/image6.jpeg');
+  min-height:100%;
+}
+
+.pimg2{
+  background-image:url('/images/image5.jpeg');
+  min-height:400px;
+}
+
+.pimg3{
+  background-image:url('/images/image4.jpeg');
+  min-height:400px;
+}
+
+.section{
+  text-align:center;
+  padding:50px 80px;
+}
+
+.light-text{
+  background-color:#f4f4f4;
+  color:#666;
+  font-size: 18px;
+}
+
+.dark-text{
+  background-color:#282e34;
+  color:#ddd;
+  font-size: 18px;
+}
+.section-text{
+  text-align: justify;
+}
+.ptext{
+  position:absolute;
+  top:50%;
+  width:100%;
+  text-align:center;
+  color:#000;
+  font-size: 28px;
+  letter-spacing:8px;
+}
+
+.ptext .border{
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+}
+footer{
+  background-color:#09118D;
+  color:white;
+  text-align: center;
+  padding:5px;
+  font-size: 15px;
+}
+footer a{
+  color:yellow;
+}
+footer a:hover{
+color: white;
+}
+.copy{
+padding:10px;
+background-color: rgb(41, 36, 129);
+}
+
+
+
+ @media(max-width:500px){
+  .pimg1, .pimg2, .pimg3{
+    background-attachment:scroll;
+  }
+}

@@ -1,0 +1,29 @@
+body{
+    background-image: url('/images/login.jpg');
+}
+.centered-form{
+    margin-top: 160px;
+}
+.centered-form .panel{
+    background:url('images/login.jpg');
+    box-shadow: rgba(0,0,0,0.3)20px 20px 20px;
+}
+input[type="text"]{
+    width:330px;
+}
+input[type="date"]{
+    width:330px;
+}
+.button {
+	background-color: Crimson;  
+	border-radius: 5px;
+	color: white;
+	padding: .5em;
+	text-decoration: none;
+  }
+  
+  .button:focus,
+  .button:hover {
+	background-color: FireBrick;
+	color: White;
+  }

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Venue Rental</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link rel="shortcut icon" href="/images/logo/logo_ibento.png">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="venue.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/data.js"></script>
+		<script src="data/venue.js"></script>
+		<script src="dashboard.js"></script>
+	</head>
+	<body ng-app="myApp">
+			<div id="loader"></div>
+			<style>
+				#loader {
+					 position: fixed;
+					 width: 100%;
+					 height: 100vh;
+					 z-index: 1;
+					 overflow: visible;
+					background: url('../loader.gif') no-repeat center center;
+		}
+			</style>
+			<script type="text/javascript">
+				var loader;
+				function loadNow(opacity) {
+					if(opacity <= 0) {
+						displayContent();
+					}
+					else {
+						loader.style.opacity = opacity;
+						window.setTimeout(function() {
+							loadNow(opacity - 0.05)
+						}, 10);
+					}
+				}
+				
+				function displayContent() {
+					loader.style.display = 'none';
+					document.getElementById('content').style.display = 'block';
+				}
+				
+				document.addEventListener("DOMContentLoaded", function() {
+					loader = document.getElementById('loader');
+					loadNow(1);
+				});
+				
+			</script>
+		<div class="header">
+			<div class="logo">
+					<span><img style="width:30px;" src="../images/logo/logo_ibento.png">Ibento</span>
+			</div>
+			<a href="#" class="nav-trigger"><span></span></a>
+		</div>
+		<div class="side-nav">
+			<div class="logo">
+					<span><img style="width:30px;" src="../images/logo/logo_ibento.png">Ibento</span>
+			</div>
+			<nav>
+				<ul>
+					<li>
+						<a href="dasboard.html">
+							<span><i class="fa fa-user"></i></span>
+							<span>Dashboard</span>
+						</a>
+					</li>
+					<li>
+							<a href="getevent.html">
+	
+								<span><i class="fa fa-cubes"></i></span>
+								<span>View Events</span>
+							</a>
+						</li>
+						<li>
+								<a href="hostevent.html" target="_blank">
+		
+									<span><i class="fa fa-cubes"></i></span>
+									<span>Host Events</span>
+								</a>
+							</li>
+						<li>
+								<a href="review.html">
+		
+										<span><i class="fa fa-credit-card"></i></span>
+										<span> Upload Review</span>
+									</a>
+								</li>
+								<li>
+									<a href="getreview.html">
+				
+											<span><i class="fa fa-credit-card"></i></span>
+											<span>Reviews</span>
+										</a>
+									</li>
+					<li>
+						<a href="equipment_rental.html">
+							<span><i class="fa fa-cart-plus"></i></span>
+							<span>Equipment Rental</span>
+						</a>
+					</li>
+					<li class="active">
+						<a href="venue.html">
+							<span><i class="fa fa-bar-chart"></i></span>
+							<span>Venue Rental</span>
+						</a>
+					</li>
+					<li>
+							<a href="profile.html">
+								<span><i class="fa fa-user"></i></span>
+								<span>Profile</span>
+							</a>
+						</li>
+					<li>
+							<a href="../index.html">
+								<span><i class="fa fa-minus-circle"></i></span>
+								<span>Log Out</span>
+							</a>
+						</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="main-content">
+			<div class="title">
+				Venue Rental
+			</div>
+			<div class="main" ng-controller="venue">
+				<h1></h1>
+				<form novalidate name="venueform">
+				<div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-5">
+						<div class="question">
+								<span ng-show="venueform.name.$error.required">Required</span>
+								<span ng-show="venueform.name.$error.name">Not a Name</span>
+								<input type="text" placeholder="Name" name="name" id="name" ng-model="name" required>
+						</div>
+						<div class="question">
+								<input type="text" placeholder="Designation" name="Designation" id="designation" ng-model="designation" >
+						</div>
+						<div class="question">
+								<span ng-show="venueform.email.$error.required">Required</span>
+								<span ng-show="venueform.email.$error.email">Not a Email</span>
+								<input type="text" placeholder="Email Id" name="email" id="email" ng-model="email" required>
+						</div>
+						<div class="question">
+								<span ng-show="venueform.phone.$error.required">Required</span>
+								<input type="number" placeholder="Phone Number" name="phone" id="phone" ng-model="phone" required>
+						</div>
+						<div class="question">
+								<span ng-show="venueform.address.$error.required">Required</span>
+								<textarea type="text" placeholder="Address" name="address" ng-model="address" id="address" rows="2" cols="45"required></textarea>
+						</div>
+						<div class="question">
+								<span ng-show="venueform.city.$error.requir ed">Required</span>
+								<input type="text" placeholder="City" name="city" ng-model="city" id="city" required>
+						</div>
+						<div class="question">
+								<span ng-show="venueform.pin.$error.required">Required</span>
+								<input type="text" placeholder="Pin Code" name="pin" ng-model="pin" id="pin" required>
+						</div>
+						<div class="question">
+								<input type="number" placeholder="Number of Halls" name="hall" id="hall" ng-model="hall">
+						</div>
+						<div class="question">
+								<input type="text" placeholder="Size of the Area (in sq ft)" name="size" ng-model="size">
+						</div>
+						
+                </div>
+                <div class="col-lg-5">
+						<div class="question">
+								<span ng-show="venueform.host.$error.required">Required</span>
+								<input type="text" placeholder="Type of Event that can be Hosted" name="host" id="host" ng-model="eventhost" required>
+						</div>
+					<div class="question">
+							<span ng-show="venueform.rental.$error.required">Required</span>
+							<input type="text" placeholder="Cost for one day Rental" name="rental" id="rental" ng-model="rental" required>
+					</div>
+					<div class="question">
+							<span ng-show="venueform.Attendees.$error.required">Required</span>
+							<input type="text" placeholder="Estimated Number of Attendees" name="Attendees" id="attendees" ng-model="attendees" required>
+					</div>
+					<div class="question">
+							<span ng-show="venueform.Contract.$error.required">Required</span>
+							<input type="text" placeholder="Contract Signer" name="Contract" id="contract" ng-model="contract" required>
+					</div>
+					<div class="question">
+							<span ng-show="venueform.image.$error.required">Required</span>
+							<input type="text" placeholder="Enter Image URL" name="image" id="image" ng-model="image" required>
+					</div>
+					<div class="question">
+						<input type="text" placeholder="Enter Video URL" name="video" id="video" ng-model="video">
+					</div>
+					<div class="question">
+							<input type="text" placeholder="Enter Google Map Embedded Code" name="map" id="map" ng-model="map">
+					</div>
+					<div class="question">
+							<span ng-show="venueform.desc.$error.required">Required</span>
+							<textarea type="text" placeholder="Description" name="desc" rows="5" cols="45" id="desc" ng-model="description" required></textarea>
+					</div>
+					</div>
+						
+				</div>
+				<center><button ng-disabled="venueform.$invalid" onclick="validate();" class="btn btn-lg" ng-click="submit()">Submit</button></center>
+			</form>
+            </div>
+            </div>
+		<footer>
+				<div class="copy">
+						<p>&copy; Copyright 2019 <a href="index.html">Ibento</a></p>
+					  </div>
+		</footer>
+	</body>
+	<style>
+input.ng-invalid{
+    border:1px solid red !important;
+}
+input span{
+    font-size:12px !important; 
+    padding-left: 20px;
+}
+textarea.ng-invalid{
+    border:1px solid red !important;
+}
+textarea span{
+    font-size:12px !important; 
+    padding-left: 20px;
+}
+</style>
+<script type="text/javascript">
+    function validate()
+    {
+        var name = document.getElementById('name').value;
+        var pin = document.getElementById('pin').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+        var address = document.getElementById('address').value;
+        var city = document.getElementById('city').value;
+        var pin = document.getElementById('pin').value;
+		var host = document.getElementById('host').value;
+		var rental = document.getElementById('rental').value;
+		var attendees = document.getElementById('attendees').value;
+		var contract = document.getElementById('contract').value;
+		var image = document.getElementById('image').value;
+        if((name != null) && (pin != null) && (email != null) && (phone != null) && (address != null) && (city != null) && (pin != null) && (city != null) && (State != null))
+        {
+            if(password == confirmpassword)
+            {
+                console.log("Registered");
+                swal("Submitted!", "You Sucessfully Registered!","success");
+            }
+            else if(phone.length() != 10){
+                swal("Oops!", "Please Check your Phone Number !","info");
+            }
+            else
+            {
+                swal("Oops!", "Please Check your password!","info");
+            }
+        }
+        else
+        {
+            console.log("Error");
+            swal("Submitted!", "Something went wrong please try again!", "info");   
+        }
+    }
+
+
+</script>
+</html>

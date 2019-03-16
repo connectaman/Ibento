@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Host Event</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link rel="shortcut icon" href="/images/logo/logo_ibento.png">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="hostevent.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="data/host.js"></script>
+		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/data.js"></script>
+		<script src="dashboard.js"></script>
+		
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+					<span><img style="width:30px;" src="../images/logo/logo_ibento.png">Ibento</span>
+			</div>
+			<a href="#" class="nav-trigger"><span></span></a>
+		</div>
+		<div class="side-nav">
+			<div class="logo">
+					<span><img style="width:30px;" src="../images/logo/logo_ibento.png">Ibento</span>
+			</div>
+			<nav>
+				<ul>
+					<li>
+						<a href="dasboard.html">
+							<span><i class="fa fa-user"></i></span>
+							<span>Dashboard</span>
+						</a>
+					</li>
+					<li>
+							<a href="getevent.html">
+	
+								<span><i class="fa fa-cubes"></i></span>
+								<span>View Events</span>
+							</a>
+						</li>
+						<li class="active">
+								<a href="hostevent.html" target="_blank">
+		
+									<span><i class="fa fa-cubes"></i></span>
+									<span>Host Events</span>
+								</a>
+							</li>
+						<li>
+								<a href="review.html">
+		
+										<span><i class="fa fa-credit-card"></i></span>
+										<span> Upload Review</span>
+									</a>
+								</li>
+								<li>
+									<a href="getreview.html">
+				
+											<span><i class="fa fa-credit-card"></i></span>
+											<span>Reviews</span>
+										</a>
+									</li>
+					<li>
+						<a href="equipment_rental.html">
+							<span><i class="fa fa-cart-plus"></i></span>
+							<span>Equipment Rental</span>
+						</a>
+					</li>
+					<li>
+						<a href="venue.html">
+							<span><i class="fa fa-bar-chart"></i></span>
+							<span>Venue Rental</span>
+						</a>
+					</li>
+					<li>
+							<a href="profile.html">
+								<span><i class="fa fa-user"></i></span>
+								<span>Profile</span>
+							</a>
+						</li>
+					<li>
+							<a href="../index.html">
+								<span><i class="fa fa-minus-circle"></i></span>
+								<span>Log Out</span>
+							</a>
+						</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="main-content">
+			<div class="title">
+				Host Event
+			</div>
+			<div class="main" ng-app="myApp" ng-controller="hostevent">
+				<h1></h1>
+				<form novalidate name="host">
+				<div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-5">
+						<div class="question">
+								<span ng-show="host.name.$error.required">Required *</span>
+								<span ng-show="host.name.$error.name">Not a Name</span>
+								<input type="text" placeholder="Name" name="name" ng-model="name" id="name" required title="This field is required">
+						</div>
+						<div class="question">
+								<input type="text" placeholder="Designation" ng-model="designation" id="designation" name="Designation">
+						</div>
+						<div class="question">
+								<span ng-show="host.email.$error.required">Required *</span>
+								<span ng-show="host.email.$error.email">Not a Email</span>
+								<input type="email" placeholder="Email Id"  ng-model="email" id="email" name="email" required>
+						</div>
+						<div class="question">
+								<span ng-show="host.phone.$error.required">Required *</span>
+								<input type="number" placeholder="Phone Number"  ng-model="phone" id="phone" name="phone"required>
+						</div>
+						<div class="question">
+								<span ng-show="host.address.$error.required">Required *</span>
+								<span ng-show="host.address.$error.address">Not a Address</span>
+								<textarea type="text" placeholder="Address"  ng-model="address" name="address" id="address" rows="4" cols="45"required></textarea>
+						</div>
+						<div class="question">
+								<span ng-show="host.city.$error.required">Required *</span>
+								<span ng-show="host.city.$error.city">Not a Name</span>
+								<input type="text" placeholder="City"  ng-model="city" id="city" name="city" required>
+						</div>
+						<div class="question">
+								<span ng-show="host.pin.$error.required">Required *</span>
+								<span ng-show="host.pin.$error.pin">Not a Name</span>
+								<input type="text" placeholder="Pin Code"  ng-model="pin" id="pin" name="pin" required>
+						</div>
+						<div class="question">
+								<span ng-show="host.eventname.$error.required">Required *</span>
+								<span ng-show="host.eventname.$error.eventname">Not a Name</span>
+								<input type="text" placeholder="Event Name"  ng-model="eventname" id="eventname" name="eventname" required>
+						</div>
+						<div class="question">
+								<ul>
+										<select class="custom-select" style="width:200px;margin-top:5px;" name="choice" id="eventtype" ng-model="eventtype" required>
+												<option value="" >Select Event</option>
+												<option value="Corporate" >Corporate</option>
+												<option value="Conference" >Conference</option>
+												<option value="Seminar" >Seminar</option>
+												<option value="Exhibition" >Exhibition</option>
+												<option value="Wedding" >Wedding</option>
+												<option value="ProductLaunch" >ProductLaunch</option>
+												<option value="Promotion" >Promotion</option>
+												<option value="IncentiveTour" >IncentiveTour</option>
+												<option value="Award" >Award</option>
+												<option value="Entertainment" >Entertainment</option>
+								</select>
+                            </ul>
+						</div>
+                </div>
+                <div class="col-lg-5">
+							   <div class="question">
+								    <label for="StartDate" style="color:black;">Start Date</label><span ng-show="host.StartDate.$error.required">Required *</span>
+                                <input type="date" placeholder="Event Start Date" id="StartDate"  ng-model="startdate" name="StartDate"required>
+							   </div>
+							   <div class="question">
+								    <label for="EndDate" style="color:black;">End Date</label><span ng-show="host.EndDate.$error.required">Required *</span>
+                                <input type="date" placeholder="Event End Date" id="dataField" ng-model="enddate" name="EndDate"required>
+							   </div>
+							   <div class="question">
+									<span ng-show="host.Attendees.$error.required">Required *</span>
+									<input type="text" placeholder="Estimated Number of Attendees"  ng-model="attendees" id="attendees" name="Attendees" required>
+							   </div>
+							   <div class="question">
+									<span ng-show="host.Contract.$error.required">Required *</span>
+									<input type="text" placeholder="Contract Signer" ng-model="contract" id="contract" name="Contract"required>
+							   </div>
+							   <div class="question">
+									<span ng-show="host.EventCity.$error.required">Required *</span>
+								    <input type="text" placeholder="City"  ng-model="eventcity" id="eventcity" name="EventCity" required>
+							   </div>
+							   <div class="question">
+									<span ng-show="host.image.$error.required">Required *</span>
+								    <input type="text" placeholder="Enter Image URL"  ng-model="image" id="image" name="image" required>
+							   </div>
+							   <div class="question">
+								    <input type="text" placeholder="Enter Video URL"  ng-model="video" id="video" name="video">
+							   </div>
+							   <div class="question">
+									<input type="text" placeholder="Enter Google Map Embedded Code"  ng-model="map" id="map" name="map">
+							   </div>
+							   <div class="question">
+									<span ng-show="host.desc.$error.required">Required *</span>
+									<textarea type="text" placeholder="Description"  ng-model="description" name="desc" id="description" rows="2" cols="45" required></textarea>
+							   </div>
+                              </div>
+				</div>
+				<center><button ng-disabled="host.$invalid" onclick="check();" class="btn-lg" ng-click="submit()">Submit</button></center>
+		
+            </div>
+			</div>
+			
+		</form>
+		<footer>
+				<div class="copy">
+						<p>&copy; Copyright 2019 <a href="index.html">Ibento</a></p>
+					  </div>
+		</footer>
+	</body>
+	<style>
+	input.ng-invalid{
+    border:1px solid red !important;
+	}
+	textarea.ng-invalid{
+		border:1px solid red !important;
+	}
+	form span{
+    font-size:12px !important; 
+	padding-left: 20px;
+	color:black;
+	}
+	</style>
+	<script type="text/javascript">
+	document.getElementById("dateField").value = new Date().toISOString().substring(0, 10)
+	 function check()
+	 {
+		// var name = document.getElementById('name').value;
+		// var designation = document.getElementById('designation').value;
+		// var email = document.getElementById('email').value;
+		var phone = document.getElementById('phone').value;
+		// var address = document.getElementById('address').value;
+		// var city = document.getElementById('city').value;
+		var pin = document.getElementById('pin').value;
+		// var eventname = document.getElementById('eventname').value;
+		// var eventtype = document.getElementById('choice').value;
+		// var startdate = document.getElementById('StartDate').value;
+		// var enddate = document.getElementById('EndDate').value;
+		var attendees = document.getElementById('Attendees').value;
+		console.log("insidec func");
+		// var contract = document.getElementById('Contract').value;
+		// var eventcity = document.getElementById('EventCity').value;
+		// var image = document.getElementById('image').value;
+		// var video = document.getElementById('video').value;
+		// var map = document.getElementById('map').value;
+		// var description = document.getElementById('description').value;
+		if(phone != null)
+		{
+			console.log("inside");
+			// if(phone.length() != 10)
+			// {
+			// 	swal("Oops!", "Please Check your Phone Number!","info");
+			// }
+			// else if(pin.length() != 6)
+			// {
+			// 	swal("Oops!", "Please Check your PinCode!","info");
+			// }
+			swal("Submitted!", "You Sucessfully Sent Data!","success");
+			// if(attendees == 0 || attendees <0)
+			// {
+			// 	swal("Oops!", "Invalid attendees count!","info");
+			// }
+			// else{
+			// 	swal("Submitted!", "You Sucessfully Sent Data!","success");
+			// }	
+		}
+		else{
+			console.log("error");
+			swal("Submitted!", "Something went wrong please try again!", "info");  
+		}
+	 }
+	</script>
+</html>

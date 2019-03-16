@@ -1,0 +1,37 @@
+{
+  "name": "ibento",
+  "version": "1.0.0",
+  "description": "event management website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connectaman/Ibento.git"
+  },
+  "author": "aman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/connectaman/Ibento/issues"
+  },
+  "homepage": "https://github.com/connectaman/Ibento#readme",
+  "dependencies": {
+    "angular-route": "^1.7.6",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.8",
+    "nexmo": "^2.4.1",
+    "node-sessionstorage": "^1.0.0",
+    "nodemailer": "^5.1.1",
+    "nodemon": "^1.18.10",
+    "socket.io": "^2.2.0",
+    "telesignsdk": "^2.2.0",
+    "xoauth2": "^1.2.0"
+  }
+}

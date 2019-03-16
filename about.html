@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ABOUT US</title>
+  <link rel="stylesheet" href="libs/css/about.css">
+  <link rel="shortcut icon" href="images/logo/logo_ibento.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+  <!-- <script type="text/javascript">(function(t,e){var r=function(t){try{var r=e.head||e.getElementsByTagName("head")[0];a=e.createElement("script");a.setAttribute("type","text/javascript");a.setAttribute("src",t);r.appendChild(a);}catch(t){}};t.CollectId = "5c4a85cf4215735d4f310341";r("https://collectcdn.com/launcher.js");})(window,document);</script> -->
+</head>
+<body>
+    <div id="loader"></div>
+    <style>
+        #loader {
+             position: fixed;
+             width: 100%;
+             height: 100vh;
+             z-index: 1;
+             overflow: visible;
+            background: url('loader.gif') no-repeat center center;
+}
+    </style>
+    <script type="text/javascript">
+        
+        var loader;
+        function loadNow(opacity) {
+            if(opacity <= 0) {
+                displayContent();
+            }
+            else {
+                loader.style.opacity = opacity;
+                window.setTimeout(function() {
+                    loadNow(opacity - 0.05)
+                }, 10);
+            }
+        }
+        
+        function displayContent() {
+            loader.style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            loader = document.getElementById('loader');
+            loadNow(1);
+        });
+        
+    </script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Ibento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link active" href="about.html">About Us <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="services_new.html">Services <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="gallery.html">Gallery <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us <span class="sr-only"></span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  <div class="pimg1">
+    <div class="ptext">
+      <span class="border">
+        ABOUT IBENTO
+      </span>
+    </div>
+  </div>
+
+  <section class="section section-text light-text">
+    <h2 style="text-align: center;">WHAT WE DO</h2>
+    <p>
+      Our Event Management website conducts theme-based events that imparts a unique experience for the users so that they can recall the experience as worthwhile to remember.
+      The core function of the event management services is to plan, execute and evaluate events based on types such as Trade Shows, Product Launch, Board Meetings and Live Concerts.
+       We employ state-of- the-art technologies to create the events. The events are based on innovative ideas so that the services can add value to the events.
+       Our event management process starts with planning the events by eliciting information from the clients about their vision on the event.
+        Later the Budget is determined and necessary permissions are taken.
+         We make sure that our clients have a single point of contact through our account administration team. 
+         Our team takes note of minute details for the event so that it unfolds in the desired manner and adheres to the financial plan. 
+      Once the event is completed, our team will wrap up and evoke client feedbacks.
+    </p>
+  </section>
+
+  <div class="pimg2">
+    <div class="ptext">
+      <span class="border">
+        WE UNDERTAKE ALL KINDS OF EVENTS.
+      </span>
+    </div>
+  </div>
+
+  <section class="section dark-text">
+    <h2>TYPES OF EVENTS</h2>
+    <p>
+      From finding an ideal location till the end of an event,
+      We provide all facilities for events such as
+      <ul>OFFICIAL EVENTS</ul>
+      <ul>LIVE ONSTAGE EVENTS</ul>
+      <ul>PERSONAL EVENTS</ul>
+      <ul>WE EVEN PROVIDE EQUIPMENT RENTAL</ul>
+    </p>
+  </section>
+
+  <div class="pimg3">
+    <div class="ptext">
+      <span class="border trans">
+        THE TEAM 
+      </span>
+    </div>
+  </div>
+
+  <section class="section dark-text">
+    <div class="row">
+    <div class="col-lg-4">
+      <img src="images/team/aman.png" alt="aman">
+      <h2>Aman Ulla</h2>
+    </div>
+    <div class="col-lg-4">
+        <img src="images/team/meghana.png" alt="meghana">
+        <h2>Meghana</h2>
+      </div>
+      <div class="col-lg-4">
+          <img src="images/team/pavana.png" alt="pavana">
+          <h2>Pavana</h2>
+        </div> 
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <img src="images/team/rashmi.png" alt="Rashmi">
+        <h2>Rashmi</h2>
+    </div>
+    <div class="col-lg-6">
+        <img src="images/team/sharan.png" alt="sharan">
+        <h2>Sharan</h2>
+      </div>
+</div>
+
+
+  </section>
+  
+</div>
+<footer class="foot">
+    <div class="row">
+      <div class="col-lg-4">
+        <h3>Ibento</h3>
+        <img style="width:200px;" src="images/logo/logo_ibento.png" alt="logo">
+        <p></p>
+      </div>
+      <div class="col-lg-4">
+          <div class="row" style="margin-top:50px;">
+              <div class="col-sm-6">
+                  <a href="signup.html"><p>SignUp</p></a>
+                  <a href="index.html"><p>Home</p></a>
+                  <a href="about.html"><p>About Us</p></a>
+              </div>
+              <div class="col-sm-6">
+                  <a href="Services.html" target="_blank"><p>Services</p></a>
+                  <a href="gallery.html"><p>Gallery</p></a>
+                  <a href="contact.html"><p>Contact Us</p></a>
+              </div>
+          </div>    
+      </div>
+      <div class="col-lg-4">
+        <p>+91-8374983748</p>
+        <p>info@ibento.com</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.05130202872!2d77.53479871489891!3d12.968569090857867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3dde41c9d541%3A0xdd5400ac1d9e0a9a!2sNIIT+Bangalore+Vijayanagar+Centre!5e0!3m2!1sen!2sin!4v1548324442885" width="300" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="copy">
+      <p>&copy; Copyright 2019 <a href="index.html">Ibento</a></p>
+    </div>
+  </footer>
+</body>
+</html>

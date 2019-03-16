@@ -1,0 +1,11 @@
+.social{
+    background-color:#09118D;
+    color:white;
+    border: none;
+}
+.social:hover{
+    box-shadow:0 0 20px cyan;
+    color:cyan;
+    border-radius:50%;
+    background-color:#09118D;
+}

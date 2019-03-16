@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Event</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link rel="shortcut icon" href="/images/logo/logo_ibento.png">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+		<script src="data/getevent.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="getevent.css">
+		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/data.js"></script>
+		<script src="dashboard.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div class="header">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span><img style="width:30px;" src="../images/logo/logo_ibento.png">Ibento</span>
+			</div>
+			<a href="#" class="nav-trigger"><span></span></a>
+		</div>
+		<div class="side-nav">
+			<div class="logo">
+					<span><img style="width:30px;" src="../images/logo/logo_ibento.png">Ibento</span>
+			</div>
+			<nav>
+				<ul>
+					<li>
+						<a href="admin_dashboard.html">
+							<span><i class="fa fa-user"></i></span>
+							<span>Dashboard</span>
+						</a>
+					</li>
+					<li class="active">
+							<a href="admin_event.html">
+								<span><i class="fa fa-cubes"></i></span>
+								<span>View Events</span>
+							</a>
+						</li>
+						<li>
+								<a href="admin_getreview.html">
+		
+									<span><i class="fa fa-credit-card"></i></span>
+									<span>Reviews</span>
+								</a>
+							</li>
+					<li>
+						<a href="admin_getequipment.html">
+
+							<span><i class="fa fa-cart-plus"></i></span>
+							<span>Equipment Rental</span>
+						</a>
+					</li>
+					<li>
+						<a href="admin_getvenue.html">
+							<span><i class="fa fa-bar-chart"></i></span>
+							<span>Venue Rental</span>
+						</a>
+					</li>
+					<li>
+							<a href="../index.html">
+								<span><i class="fa fa-minus-circle"></i></span>
+								<span>Log Out</span>
+							</a>
+						</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="main-content" ng-controller="eventcontroller">
+			<div class="title">
+				Review
+			</div>
+			<div class="main" ng-repeat="d in data">
+					<d	iv class="widget">
+						<div class="row">
+							<div class="col-lg-6">
+									<p><strong>Name :</strong> {{d.name}} </p>
+									<p><strong>Email :</strong> {{d.email}}</p>
+									<p style="border-left:2px solid grey;padding-left:10px;"><strong>Address :</strong> {{d.address}}</p>
+									<p><strong>City :</strong> {{d.city}}</p>
+									<p><strong>Pin :</strong> {{d.pin}}</p>
+							</div>
+							<div class="col-lg-6">
+									<p><strong>EventName :</strong> {{d.eventtype}} </p>
+									<p><strong>StartDate :</strong> {{d.startdate}} </p>
+									<p><strong>EndDate :</strong> {{d.enddate}} </p>
+									<p><strong>Contract Name :</strong> {{d.contract}} </p>
+									<p><strong>Event City :</strong> {{d.eventcity}} </p>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-lg-6">
+									<img class="hover01" style="width:500px;padding-left:50px;" ng-src="{{d.image}}" alt="image"><br>
+							</div>
+							<div class="col-lg-6">
+								<p style="border-left:2px solid grey;padding-left:5px;"><strong>Description :</strong> {{d.description}}</p>
+
+							</div>
+						</div>
+						<hr>
+						<center>
+							<a href="http://localhost:3000/eventaccept/{{data}}" ><button class="btn btn-success ">Accept</button></a>
+							<button class="btn btn-primary ">Edit</button>
+						 <a href="http://localhost:3000/eventdelete/{{d.name}}"><button class="btn btn-danger">Delete</button></a>
+						</center>
+						<hr>
+					</div>
+				</div>
+		<footer>
+				<div class="copy">
+						<p>&copy; Copyright 2019 <a style="color:yellow;" href="index.html">Ibento</a></p>
+					  </div>
+		</footer>
+	</body>
+</html>

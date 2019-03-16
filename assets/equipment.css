@@ -1,0 +1,54 @@
+body{
+	background-image: url('../img/erent_1.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#heading{
+    background-color: whitesmoke;
+     opacity: 0.90;
+    color: #111111;
+    padding: 30px;
+     text-align: center;
+     height: 6px;
+     width: 350px;
+    margin: 0 auto;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 5px;
+    
+    transform: translateX(9%);
+
+}
+.erform{
+	text-align: center;
+	margin: 120px 550px;
+}
+#info{
+	width: 90%;
+	background-color: #282e34;
+	opacity: 0.9;
+	padding: 60px 50px;
+
+}
+.box{
+	padding: 12px;
+	border-radius: 7px;
+	width: 200px;
+}
+.main{
+	font-size: 18px;
+	color: whitesmoke;
+}
+.eq{
+	font-size: 17px;
+	color: white;
+}
+#button{
+	padding: 12px;
+	border-radius: 7px;
+	width: 200px;
+	background-color: #0C6997;
+	font-size: 18px;
+}
+}
