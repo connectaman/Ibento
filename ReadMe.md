@@ -1,19 +1,19 @@
 Packages to be Installed
-    -> angular-route
-    -> body-parser
-    cors
-    dotenv
-    ejs
-    express
-    express-session
-    mongodb
-    mongoose
-    nexmo
-    node-sessionstorage
-    nodemailer
-    nodemon
-    socket.io
-    telesignsdk
+    angular-route,
+    body-parser,
+    cors,
+    dotenv,
+    ejs,
+    express,
+    express-session,
+    mongodb,
+    mongoose,
+    nexmo,
+    node-sessionstorage,
+    nodemailer,
+    nodemon,
+    socket.io,
+    telesignsdk,
     xoauth2
     
     
