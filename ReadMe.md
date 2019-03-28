@@ -1,6 +1,6 @@
 Packages to be Installed
-    angular-route
-    body-parser
+    -> angular-route
+    -> body-parser
     cors
     dotenv
     ejs
