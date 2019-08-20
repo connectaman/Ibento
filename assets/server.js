@@ -8,10 +8,7 @@ let bodyParser = require('body-parser');
 let bp=bodyParser.json();
 let session = require('express-session');
 const Nexmo = require('nexmo');
-const nexmo = new Nexmo({
-  apiKey: process.env.NEXMO_API_KEY,
-  apiSecret: process.env.NEXMO_API_SECRET
-});
+
 //Cros 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
