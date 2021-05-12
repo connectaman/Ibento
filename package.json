@@ -28,7 +28,7 @@
     "mongoose": "^5.4.8",
     "nexmo": "^2.4.1",
     "node-sessionstorage": "^1.0.0",
-    "nodemailer": "^5.1.1",
+    "nodemailer": "^6.4.16",
     "nodemon": "^1.18.10",
     "socket.io": "^2.2.0",
     "telesignsdk": "^2.2.0",
